@@ -1,0 +1,56 @@
+# Sensitive output — never commit these
+findings/
+recon/
+reports/
+hunt-memory/
+config.json
+*.burp
+*.json.bak
+
+# API keys and tokens
+.env
+secrets.txt
+api_keys.txt
+.private/
+
+# Nested local clones / sub-repos (not tracked)
+Agentic-Bug-Hunter/
+
+# Local control sockets (short paths for AF_UNIX)
+.ctl/
+
+# Relocatable engine assembled by scripts/bundle-engine.sh
+desktop/src-tauri/resources/engine/**
+!desktop/src-tauri/resources/engine/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+*.egg-info/
+
+# macOS
+.DS_Store
+.AppleDouble
+*.p12
+*.cer
+*.p8
+AuthKey_*.p8
+
+# Logs
+*.log
+*.txt.bak
+
+# Tool output
+*.out
+nmap-output/
+.atlas/
+.forge/
+
+# Runtime lead-board ledgers (per-target, regenerated on each hunt)
+# ** matches both the repo-root layout and bughunter/memory/leads/ after the bughunter/ move
+**/memory/leads/
+dist/
+build/

@@ -1,0 +1,172 @@
+# Claude Bug Bounty — Plugin Guide
+
+This repo is a Claude Code plugin for professional bug bounty hunting across HackerOne, Bugcrowd, Intigriti, and Immunefi.
+
+## What's Here
+
+### Skills (10 domains — load with `/bug-bounty`, `/web2-recon`, `/token-scan`, etc.)
+
+| Skill | Domain |
+|---|---|
+| `skills/bug-bounty/` | Master workflow — recon to report, all vuln classes, LLM testing, chains |
+| `skills/bb-methodology/` | **Hunting mindset + 5-phase non-linear workflow + tool routing + session discipline** |
+| `skills/web2-recon/` | Subdomain enum, live host discovery, URL crawling, nuclei |
+| `skills/web2-vuln-classes/` | 21 bug classes with bypass tables (SSRF, open redirect, file upload, Agentic AI) |
+| `skills/security-arsenal/` | Payloads, bypass tables, gf patterns, always-rejected list |
+| `skills/web3-audit/` | 10 smart contract bug classes, Foundry PoC template, pre-dive kill signals |
+| `skills/meme-coin-audit/` | Meme coin rug pull detection, token authority checks, bonding curve exploits, LP attacks |
+| `skills/report-writing/` | H1/Bugcrowd/Intigriti/Immunefi report templates, CVSS 3.1, human tone |
+| `skills/triage-validation/` | 7-Question Gate, 4 gates, never-submit list, conditionally valid table |
+| `skills/credential-attack/` | Password spray methodology — when/why, 4-stage pipeline, mode selection, lockout tactics, legal guardrails, pitfalls learned from live tests |
+| `skills/client-reverse/` | Client-side request-signing / anti-bot token reversal — packet-first replay, sign-input isolation, fetch/XHR hooking, deobfuscation, reach protected APIs |
+| `skills/mobile-pentest/` | Android/iOS app pentest — runtime-first proxy workflow, APK/IPA decompile for hidden endpoints + secrets, deeplink/exported-activity injection, WebView bridge, SSL pinning bypass |
+| `skills/cicd-security/` | CI/CD pipeline hunting — GitHub Actions injection, secret exfil, self-hosted runner poisoning, OIDC abuse, supply chain attacks |
+| `skills/graphql-audit/` | GraphQL hunting — introspection, field suggestions (clairvoyance), batching DoS, IDOR via aliasing, injection, auth bypass, depth bombs |
+| `skills/argus/` | **Argus** (all-seeing scanner suite) — CORS, CRLF/host-header, NoSQL injection, JWT (alg:none/confusion/crack), OOB blind-bug confirmation (interactsh), LLM red-team corpus |
+| `skills/mcp-server-audit/` | MCP server security — tool poisoning, param→sink injection (path/cmd/SSRF/SQL), missing approval gates, result-channel secret leaks, rug-pull/confused-deputy, transport config |
+| `skills/cloud-pentest/` | Post-access cloud exploitation (AWS/GCP/Azure) — IAM enum + privesc, IMDS metadata creds, STS/impersonation, bucket takeover, secrets harvest, proving impact |
+
+### Commands (33 slash commands)
+
+> **Note:** All commands are prefixed to avoid conflicts with Claude Code's built-in commands.
+> `/resume` is a reserved Claude Code command — use `/pickup` to continue a previous hunt.
+
+| Command | Usage |
+|---|---|
+| `/recon` | `/recon target.com` — full recon pipeline |
+| `/hunt` | `/hunt target.com` — start hunting |
+| `/validate` | `/validate` — run 7-Question Gate on current finding |
+| `/report` | `/report` — write submission-ready report |
+| `/chain` | `/chain` — build A→B→C exploit chain |
+| `/scope` | `/scope <asset>` — verify asset is in scope |
+| `/scope-aggregate` | `/scope-aggregate <program>` — pull every in-scope asset across H1/Bugcrowd/Intigriti/YWH/Immunefi |
+| `/triage` | `/triage` — quick 7-Question Gate |
+| `/web3-audit` | `/web3-audit <contract.sol>` — smart contract audit |
+| `/autopilot` | `/autopilot target.com --normal` — autonomous hunt loop |
+| `/surface` | `/surface target.com` — ranked attack surface |
+| `/pickup` | `/pickup target.com` — pick up previous hunt (was `/resume`) |
+| `/remember` | `/remember` — log finding to hunt memory |
+| `/intel` | `/intel target.com` — fetch CVE + disclosure intel |
+| `/token-scan` | `/token-scan <contract>` — meme coin/token rug pull scanner |
+| `/memory-gc` | `/memory-gc [--rotate|--purge-backups]` — inspect/rotate hunt-memory JSONL files (10MB cap, 3 backups) |
+| `/secrets-hunt` | `/secrets-hunt --js-bundle <recon-dir>` — leaked-credential scan (trufflehog/noseyparker/gitleaks) |
+| `/takeover` | `/takeover --recon <recon-dir>` — subdomain takeover candidates (dnsReaper/subjack) |
+| `/cloud-recon` | `/cloud-recon --keyword <name>` — public S3/Azure/GCP + CloudFlare-bypass origin IPs |
+| `/param-discover` | `/param-discover <url>` — find hidden HTTP parameters (Arjun/x8) |
+| `/bypass-403` | `/bypass-403 <url>` — try header/method/encoding tricks against a 403/401 |
+| `/arsenal` | `/arsenal [tool]` — list installed external tools or get an install hint |
+| `/scan-cves` | `/scan-cves <host>` — focused nuclei CVE sweep (high/critical) + optional log4j-scan |
+| `/wordlist-gen` | `/wordlist-gen <target>` — company-specific password wordlist (cewler + hashcat); requires `--with-credential-attack` |
+| `/osint-employees` | `/osint-employees <target>` — employee names + emails (theHarvester + username-anarchy, opt-in LinkedIn); requires `--with-credential-attack` |
+| `/breach-check` | `/breach-check <wordlist>` — HIBP k-anonymity rank wordlist by real-world breach count |
+| `/spray` | `/spray <url> --mode http-form\|oauth\|o365\|okta --users <f> --passes <f>` — password spray with hard guards (typed-host confirm, lockout warn, audit log) |
+| `/graphql-audit` | `/graphql-audit <url>` — full GraphQL audit: introspection, batching DoS, IDOR, injection, alias bomb, graphw00f fingerprint |
+| `/cors` | `/cors <url>` — CORS misconfig scanner (arbitrary-origin reflection, null-origin, credential exposure, suffix/prefix regex bypass) |
+| `/crlf` | `/crlf <url> [--host-header]` — CRLF / response-splitting + host-header injection (Set-Cookie injection, reset poisoning) |
+| `/nosqli` | `/nosqli --login <url> --user-field <f> --pass-field <f>` — NoSQL injection (operator auth-bypass, $where time-based blind) |
+| `/jwt-scan` | `/jwt-scan <token> [--analyze\|--alg-none\|--confuse\|--crack]` — JWT alg:none, RS256→HS256 confusion, weak-secret crack (offline) |
+| `/oob` | `/oob --payloads <oob-domain>` — out-of-band orchestrator: confirm blind SSRF/XXE/SQLi/RCE/Log4Shell via interactsh correlation |
+| `/llm-redteam` | `/llm-redteam --url <chat-endpoint>` — LLM red-team corpus: prompt-injection, jailbreak, system-prompt leak, exfil, indirect injection |
+| `/poc` | `/poc capture <url> [-H ...] \| from-request req.txt [--response resp.txt]` — reproducible PoC evidence bundle (request/response, curl, HAR, screenshot, report-ready evidence.md); secrets redacted by default |
+| `/dashboard` | `/dashboard [--port 8777] \| --export dashboard.html` — local web Hunt Dashboard: leads, recon surface, findings, reports, galleries, memory flywheel, in one live view |
+| `/verify` | `/verify check <bundle-dir> [--marker "signal"] \| sweep [root]` — report gate: independently re-derives a finding from its PoC bundle; PROVEN → reportable, REFUTED/UNPROVEN/INCONCLUSIVE → suppressed; writes verification.json; `--require-proof` gates CI |
+| `/oracle` | `/oracle train \| rank <target> \| score --class idor --url <u> \| eval` — self-learning prioritizer: trains on your journal outcomes to predict P(lead becomes a real finding), with per-feature explanations + leave-one-out CV vs the static scorer |
+
+### Agents (9 specialized agents)
+
+- `recon-agent` — subdomain enum + live host discovery
+- `report-writer` — generates H1/Bugcrowd/Immunefi reports
+- `validator` — 4-gate checklist on a finding
+- `web3-auditor` — smart contract bug class analysis
+- `chain-builder` — builds A→B→C exploit chains
+- `autopilot` — autonomous hunt loop (scope→recon→rank→hunt→validate→report)
+- `recon-ranker` — attack surface ranking from recon output + memory
+- `token-auditor` — fast meme coin/token rug pull and security analysis
+- `credential-hunter` — orchestrates wordlist-gen + osint-employees + breach-check; HARD STOPS at spray for human go/no-go
+
+### Rules (always active)
+
+- `rules/hunting.md` — 17 critical hunting rules
+- `rules/reporting.md` — report quality rules
+
+### Tools (Python/shell — in `tools/`)
+
+- `bughunter/tools/hunt.py` — master orchestrator
+- `bughunter/tools/recon_engine.sh` — subdomain + URL discovery (now with optional `nuclei` phase)
+- `bughunter/tools/vuln_scanner.sh` — XSS/SQLi/SSTI/MFA/SAML probe pipeline
+- `bughunter/tools/validate.py` — 4-gate finding validator
+- `bughunter/tools/learn.py` — CVE + disclosure intel
+- `bughunter/tools/intel_engine.py` — on-demand intel with memory context
+- `bughunter/tools/scope_checker.py` — deterministic scope safety checker
+- `bughunter/tools/scope_aggregator.sh` — multi-platform scope pull (bbscope + bounty-targets-data)
+- `bughunter/tools/secrets_hunter.sh` — trufflehog/noseyparker/gitleaks wrapper for FS/git/JS/GH-org
+- `bughunter/tools/takeover_scanner.sh` — dnsReaper/subjack subdomain-takeover scanner
+- `bughunter/tools/cloud_recon.sh` — S3Scanner + cloud_enum + CloudFail wrapper
+- `bughunter/tools/param_discovery.sh` — Arjun/x8 hidden-parameter discovery
+- `bughunter/tools/bypass_403.sh` — byp4xx + built-in 403/401 bypass matrix
+- `bughunter/tools/cve_scan.sh` — focused nuclei CVE-tag sweep + optional log4j-scan
+- `bughunter/tools/external_arsenal.sh` — installed-tool registry (~50 tools); other scripts source this for `_have <tool>`
+- `bughunter/tools/cicd_scanner.sh` — GitHub Actions workflow scanner (sisakulint wrapper, remote scan)
+- `bughunter/tools/token_scanner.py` — automated token red flag scanner (EVM + Solana)
+- `bughunter/tools/wordlist_engine.sh` — company-specific password wordlist generator (cewler + hashcat rules); requires `--with-credential-attack`
+- `bughunter/tools/osint_employees.sh` — employee names + email patterns for spray prep (theHarvester + username-anarchy, opt-in CrossLinked); requires `--with-credential-attack`
+- `bughunter/tools/breach_checker.py` — HIBP k-anonymity wordlist enrichment; ranks passwords by breach count (no API key, free)
+- `bughunter/tools/spray_orchestrator.sh` — password spray with typed-hostname guard + lockout warning + audit log; modes: http-form / oauth / o365 / okta (TREVOR); requires `--with-credential-attack` for TREVOR modes
+- `bughunter/tools/graphql_audit.sh` — 7-phase GraphQL audit: introspection + schema dump, graphw00f fingerprint, clairvoyance field discovery, batching DoS, alias bomb, gqlmap injection, graphql-cop checklist
+- `bughunter/tools/lead_board.py` — persistent per-target lead ledger that routes every recon observation to the right `hunt-*` skill and tracks its status so no lead is forgotten (`memory/leads/<target>.jsonl`). `ingest` parses recon output and routes 30+ signal types (IDOR/SSRF/GraphQL/OAuth/SAML/LLM/source-leak/tech-stack/nuclei) to skills; `show` lists untouched-first and flags stale high-priority leads; `next` returns the single top lead; `touch` marks a lead investigating/killed/reported (re-ingest preserves status). See **Critical Rule 6**.
+- `bughunter/tools/eol_check.py` — EOL / lifecycle intel from endoflife.date (auto-run by `hunt.py` after recon)
+- `bughunter/tools/waf_encoder.py` · `waf_response_analyzer.py` · `multipart_mutator.py` — WAF bypass + soft-block scoring + upload mutation
+- `bughunter/tools/cors_scanner.py` — CORS misconfig scanner (origin-reflection / null / credentialed / suffix-prefix regex / scheme-downgrade); pure classifier, no deps
+- `bughunter/tools/crlf_scanner.py` — CRLF / response-splitting + host-header injection with Set-Cookie canary detection (encoded + UTF-8 bypass variants)
+- `bughunter/tools/nosqli_scanner.py` — NoSQL injection (operator auth-bypass, bracket-syntax, $where time-based blind) with differential + timing classifier
+- `bughunter/tools/jwt_scanner.py` — offline JWT toolkit: alg:none forgery, RS256→HS256 confusion, HS256 secret crack, static claim analysis (pure stdlib)
+- `bughunter/tools/oob_listener.py` — out-of-band orchestrator wrapping interactsh-client; payloads + correlation for blind SSRF/XXE/SQLi/RCE/Log4Shell
+- `bughunter/tools/llm_redteam.py` — LLM red-team corpus runner (prompt-injection/jailbreak/system-prompt-leak/exfil/indirect/guardrail-bypass) with canary detection
+- `bughunter/tools/poc_bundler.py` — PoC evidence bundler (`capture` live via SSRF-guarded `safe_http`, or `from-request` offline from a saved/Burp request). Emits `request.http`, `response.http`, `repro.sh` (curl), `evidence.har` (HAR 1.2), optional `screenshot.png`, `evidence.md` (report-ready), and `bundle.json` (manifest + response SHA-256) under `findings/<target>-<class>/evidence/<id>/`. Secrets redacted by default (repro.sh uses `$ENV` placeholders); refuses PUT/DELETE/PATCH without `--confirm-unsafe`. See `/poc`.
+- `bughunter/tools/hunt_dashboard.py` — local web Hunt Dashboard (`serve`/`export`); reads `memory/leads/`, `recon/`, `findings/`, `reports/`, galleries, and `hunt-memory/` into one live view. Pure stdlib, binds to 127.0.0.1, HTML-escapes all recon-derived data, path-traversal-guarded `/file` endpoint. Distinct from `bughunter/tools/dashboard.py` (the in-terminal ANSI progress TUI). See `/dashboard`.
+- `bughunter/tools/verifier.py` — the report gate (prove-or-suppress). Independently re-derives a finding from its `poc_bundler` bundle (re-sends via SSRF-guarded `safe_http` with an initial-host guard, checks a confirmation marker in the fresh response headers+body) and decides reportability: PROVEN only if the marker was in the original response AND is still present now; else REFUTED/UNPROVEN/INCONCLUSIVE → suppressed. Records the re-fetched response's SHA + status. `decide()` is a pure, total policy function; only PROVEN ships. Writes `verification.json`; `check`/`sweep`; `--require-proof` exits non-zero for gating; unsafe methods never re-fired without `--confirm-unsafe`; secrets read from env only. Reuses only merged code (poc_bundler). See `/verify`.
+- `bughunter/tools/oracle.py` — self-learning lead/finding prioritizer. Trains a smoothed Naive-Bayes log-odds model on `journal.jsonl` outcomes (confirmed/rejected + payout/severity/vuln-class/endpoint/tech features) to score P(lead becomes a real finding), replacing the static regex priority with a data-driven, per-feature-explainable rank. Cold-start prior blends toward the learned model as evidence grows; `eval` runs leave-one-out CV against the prior + majority baselines to prove lift. `train` / `eval` / `rank <target>` (reuses `lead_board`) / `score`. Pure-stdlib, deterministic, read-only. See `/oracle`.
+- Full catalogue: **`bughunter/tools/README.md`** (~50 tools). `hunt.py` auto-ingests leads after recon (`--graphql` / `--cve-hunt` / `--skip-leads` flags).
+
+### External tool references
+
+- `wordlists/REFERENCES.md` — pointers to SecLists / OneListForAll / fuzz4bounty / PayloadsAllTheThings
+- `skills/security-arsenal/REFERENCES.md` — methodology, writeup archives, dorks, key-verification, AI-security skill repos
+- `skills/security-arsenal/METHODOLOGY_CHEATSHEET.md` — per-vuln quick-check tables distilled from HowToHunt + HolyTips + AllAboutBugBounty + KingOfBugBountyTips
+
+### MCP Integrations (in `mcp/`)
+
+- `mcp/burp-mcp-client/` — Burp Suite proxy integration
+- `mcp/hackerone-mcp/` — HackerOne public API (Hacktivity, program stats, policy)
+
+### Hunt Memory (in `memory/`)
+
+- `memory/pattern_db.py` — cross-target pattern learning
+- `memory/audit_log.py` — request audit log, rate limiter, circuit breaker
+- `memory/rotation.py` — size-based JSONL rotation (10MB cap, keep 3 backups), auto-fired on append
+- `memory/schemas.py` — schema validation for all data
+
+## Start Here
+
+```bash
+claude
+# /recon target.com
+# /hunt target.com
+# /validate   (after finding something)
+# /report     (after validation passes)
+```
+
+## Install Skills
+
+```bash
+chmod +x install.sh && ./install.sh
+```
+
+## Critical Rules (Always Active)
+
+1. READ FULL SCOPE before touching any asset
+2. NEVER hunt theoretical bugs — "Can attacker do this RIGHT NOW?"
+3. Run 7-Question Gate BEFORE writing any report
+4. KILL weak findings fast — N/A hurts your validity ratio
+5. 5-minute rule — nothing after 5 min = move on
+6. **LEAD BOARD — never lose a lead.** After recon, run `lead_board.py ingest <target>` + `show`, and route each finding to its `hunt-*` skill in plain language ("GraphQL endpoint → hunt-graphql"). When starting/killing/reporting a lead, `touch` its status. The hunter focuses on one lead at a time; the board remembers the rest so none is forgotten. Surface stale high-priority leads unprompted.

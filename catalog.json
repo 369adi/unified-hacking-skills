@@ -1,0 +1,1225 @@
+{
+  "overlaps": {
+    "clickjacking": [
+      "hack-skills",
+      "hacking-skills"
+    ],
+    "open-redirect": [
+      "hack-skills",
+      "hacking-skills"
+    ]
+  },
+  "merged_summary": {
+    "raw_skill_entries": 179,
+    "canonical_skills": 142,
+    "fused_groups": 25,
+    "reduced_by": 37,
+    "dropped_phantom_entries": 5,
+    "agents": 3,
+    "tool_files": 84,
+    "domain_counts": {
+      "web-injection": 21,
+      "auth-authz": 11,
+      "binary-pwn": 10,
+      "mobile": 10,
+      "client-side": 8,
+      "methodology-core": 8,
+      "cicd-supplychain": 7,
+      "crypto": 7,
+      "windows-ad": 7,
+      "code-review-quality": 6,
+      "ai-ml-llm": 5,
+      "blockchain-web3": 5,
+      "recon": 5,
+      "reverse-engineering": 5,
+      "linux-container": 4,
+      "network-pivoting": 4,
+      "api": 3,
+      "forensics": 3,
+      "meta-selfimprove": 3,
+      "business-logic": 2,
+      "cloud": 2,
+      "macos": 2,
+      "waf-bypass": 2,
+      "file-path": 1,
+      "safety-scanning": 1
+    }
+  },
+  "dropped": [
+    "hacking-skills:path-traversal",
+    "hacking-skills:insecure-file-upload",
+    "hack-skills:upload-insecure-files",
+    "hack-skills:unauthorized-access-common-services",
+    "hack-skills:reverse-shell-techniques"
+  ],
+  "merged_index": [
+    {
+      "canonical": "401-403-bypass-techniques",
+      "domain": "waf-bypass",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:401-403-bypass-techniques"
+      ]
+    },
+    {
+      "canonical": "Agentic-Bug-Hunter",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:Agentic-Bug-Hunter"
+      ]
+    },
+    {
+      "canonical": "active-directory-acl-abuse",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:active-directory-acl-abuse"
+      ]
+    },
+    {
+      "canonical": "active-directory-certificate-services",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:active-directory-certificate-services"
+      ]
+    },
+    {
+      "canonical": "active-directory-kerberos-attacks",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:active-directory-kerberos-attacks"
+      ]
+    },
+    {
+      "canonical": "agentic-app-audit",
+      "domain": "ai-ml-llm",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:agentic-app-audit"
+      ]
+    },
+    {
+      "canonical": "ai-ml-security",
+      "domain": "ai-ml-llm",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:ai-ml-security"
+      ]
+    },
+    {
+      "canonical": "amend-skill",
+      "domain": "meta-selfimprove",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:amend-skill"
+      ]
+    },
+    {
+      "canonical": "android-pentesting-tricks",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:android-pentesting-tricks"
+      ]
+    },
+    {
+      "canonical": "anti-debugging-techniques",
+      "domain": "reverse-engineering",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:anti-debugging-techniques"
+      ]
+    },
+    {
+      "canonical": "api-recon-and-docs",
+      "domain": "recon",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:api-recon-and-docs"
+      ]
+    },
+    {
+      "canonical": "api-sec",
+      "domain": "api",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:api-sec"
+      ]
+    },
+    {
+      "canonical": "arbitrary-write-to-rce",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:arbitrary-write-to-rce"
+      ]
+    },
+    {
+      "canonical": "argus",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:argus"
+      ]
+    },
+    {
+      "canonical": "attack-surface-mapping",
+      "domain": "recon",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:attack-surface-mapping"
+      ]
+    },
+    {
+      "canonical": "auth-sec",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:auth-sec"
+      ]
+    },
+    {
+      "canonical": "authentication-bypass",
+      "domain": "auth-authz",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:authbypass-authentication-flaws",
+        "hacking-skills:auth-bypass"
+      ]
+    },
+    {
+      "canonical": "authz-bypass",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:authz-bypass"
+      ]
+    },
+    {
+      "canonical": "binary-protection-bypass",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:binary-protection-bypass"
+      ]
+    },
+    {
+      "canonical": "browser-exploitation-v8",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:browser-exploitation-v8"
+      ]
+    },
+    {
+      "canonical": "bug-bounty-methodology",
+      "domain": "methodology-core",
+      "source_count": 2,
+      "sources": [
+        "Agentic-Bug-Hunter:bug-bounty",
+        "Agentic-Bug-Hunter:bb-methodology"
+      ]
+    },
+    {
+      "canonical": "business-logic",
+      "domain": "business-logic",
+      "source_count": 3,
+      "sources": [
+        "hack-skills:business-logic-vulnerabilities",
+        "hacking-skills:business-logic-flaws",
+        "hack-skills:business-logic-vuln"
+      ]
+    },
+    {
+      "canonical": "cicd-bot-command-injection",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:cicd-bot-command-injection"
+      ]
+    },
+    {
+      "canonical": "cicd-security",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:cicd-security"
+      ]
+    },
+    {
+      "canonical": "classical-cipher-analysis",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:classical-cipher-analysis"
+      ]
+    },
+    {
+      "canonical": "clickjacking",
+      "domain": "client-side",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:clickjacking",
+        "hacking-skills:clickjacking"
+      ]
+    },
+    {
+      "canonical": "client-reverse",
+      "domain": "reverse-engineering",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:client-reverse"
+      ]
+    },
+    {
+      "canonical": "cloud-pentest",
+      "domain": "cloud",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:cloud-pentest"
+      ]
+    },
+    {
+      "canonical": "code-obfuscation-deobfuscation",
+      "domain": "reverse-engineering",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:code-obfuscation-deobfuscation"
+      ]
+    },
+    {
+      "canonical": "command-injection",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:cmdi-command-injection",
+        "hacking-skills:cmd-injection"
+      ]
+    },
+    {
+      "canonical": "container-escape-techniques",
+      "domain": "linux-container",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:container-escape-techniques"
+      ]
+    },
+    {
+      "canonical": "cookie-attacks",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:cookie-attacks"
+      ]
+    },
+    {
+      "canonical": "cors-misconfiguration",
+      "domain": "client-side",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:cors-cross-origin-misconfiguration",
+        "hacking-skills:cors-misconfig"
+      ]
+    },
+    {
+      "canonical": "credential-attack",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:credential-attack"
+      ]
+    },
+    {
+      "canonical": "crlf-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:crlf-injection"
+      ]
+    },
+    {
+      "canonical": "csp-bypass-advanced",
+      "domain": "client-side",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:csp-bypass-advanced"
+      ]
+    },
+    {
+      "canonical": "cspt",
+      "domain": "client-side",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:cspt"
+      ]
+    },
+    {
+      "canonical": "csrf",
+      "domain": "client-side",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:csrf-cross-site-request-forgery",
+        "hacking-skills:csrf"
+      ]
+    },
+    {
+      "canonical": "csv-formula-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:csv-formula-injection"
+      ]
+    },
+    {
+      "canonical": "dangling-markup-injection",
+      "domain": "client-side",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:dangling-markup-injection"
+      ]
+    },
+    {
+      "canonical": "default-credentials",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:default-credentials"
+      ]
+    },
+    {
+      "canonical": "defi-attack-patterns",
+      "domain": "blockchain-web3",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:defi-attack-patterns"
+      ]
+    },
+    {
+      "canonical": "dependency-confusion",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:dependency-confusion"
+      ]
+    },
+    {
+      "canonical": "deserialization-insecure",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:deserialization-insecure"
+      ]
+    },
+    {
+      "canonical": "distill-skill",
+      "domain": "meta-selfimprove",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:distill-skill"
+      ]
+    },
+    {
+      "canonical": "dns-rebinding-attacks",
+      "domain": "network-pivoting",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:dns-rebinding-attacks"
+      ]
+    },
+    {
+      "canonical": "email-header-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:email-header-injection"
+      ]
+    },
+    {
+      "canonical": "expression-language-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:expression-language-injection"
+      ]
+    },
+    {
+      "canonical": "file-access-vuln",
+      "domain": "file-path",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:file-access-vuln"
+      ]
+    },
+    {
+      "canonical": "format-string-exploitation",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:format-string-exploitation"
+      ]
+    },
+    {
+      "canonical": "ghost-bits-cast-attack",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:ghost-bits-cast-attack"
+      ]
+    },
+    {
+      "canonical": "github-actions-cache-poisoning",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:github-actions-cache-poisoning"
+      ]
+    },
+    {
+      "canonical": "github-actions-script-injection",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:github-actions-script-injection"
+      ]
+    },
+    {
+      "canonical": "graphql-security",
+      "domain": "api",
+      "source_count": 3,
+      "sources": [
+        "Agentic-Bug-Hunter:graphql-audit",
+        "hacking-skills:graphql-idor-via-introspection-leak",
+        "hack-skills:graphql-and-hidden-parameters"
+      ]
+    },
+    {
+      "canonical": "hack",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:hack"
+      ]
+    },
+    {
+      "canonical": "hash-attack-techniques",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:hash-attack-techniques"
+      ]
+    },
+    {
+      "canonical": "heap-exploitation",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:heap-exploitation"
+      ]
+    },
+    {
+      "canonical": "http-host-header-attacks",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:http-host-header-attacks"
+      ]
+    },
+    {
+      "canonical": "http-parameter-pollution",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:http-parameter-pollution"
+      ]
+    },
+    {
+      "canonical": "http2-specific-attacks",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:http2-specific-attacks"
+      ]
+    },
+    {
+      "canonical": "idor-bola",
+      "domain": "auth-authz",
+      "source_count": 3,
+      "sources": [
+        "hack-skills:idor-broken-object-authorization",
+        "hacking-skills:bola-idor",
+        "hack-skills:api-authorization-and-bola"
+      ]
+    },
+    {
+      "canonical": "injection-checking",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:injection-checking"
+      ]
+    },
+    {
+      "canonical": "insecure-source-code-management",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:insecure-source-code-management"
+      ]
+    },
+    {
+      "canonical": "ios-pentesting-tricks",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:ios-pentesting-tricks"
+      ]
+    },
+    {
+      "canonical": "jndi-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:jndi-injection"
+      ]
+    },
+    {
+      "canonical": "jwt-attacks",
+      "domain": "blockchain-web3",
+      "source_count": 3,
+      "sources": [
+        "hack-skills:jwt-oauth-token-attacks",
+        "hacking-skills:jwt-misconfig",
+        "hack-skills:api-auth-and-jwt-abuse"
+      ]
+    },
+    {
+      "canonical": "kernel-exploitation",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:kernel-exploitation"
+      ]
+    },
+    {
+      "canonical": "kubernetes-pentesting",
+      "domain": "cloud",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:kubernetes-pentesting"
+      ]
+    },
+    {
+      "canonical": "lattice-crypto-attacks",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:lattice-crypto-attacks"
+      ]
+    },
+    {
+      "canonical": "linux-lateral-movement",
+      "domain": "linux-container",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:linux-lateral-movement"
+      ]
+    },
+    {
+      "canonical": "linux-privilege-escalation",
+      "domain": "linux-container",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:linux-privilege-escalation"
+      ]
+    },
+    {
+      "canonical": "linux-security-bypass",
+      "domain": "linux-container",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:linux-security-bypass"
+      ]
+    },
+    {
+      "canonical": "llm-prompt-injection",
+      "domain": "ai-ml-llm",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:llm-prompt-injection"
+      ]
+    },
+    {
+      "canonical": "llm-redteam",
+      "domain": "ai-ml-llm",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:llm-redteam"
+      ]
+    },
+    {
+      "canonical": "macos-process-injection",
+      "domain": "macos",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:macos-process-injection"
+      ]
+    },
+    {
+      "canonical": "macos-security-bypass",
+      "domain": "macos",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:macos-security-bypass"
+      ]
+    },
+    {
+      "canonical": "mass-assignment",
+      "domain": "api",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mass-assignment"
+      ]
+    },
+    {
+      "canonical": "mcp-server-audit",
+      "domain": "ai-ml-llm",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:mcp-server-audit"
+      ]
+    },
+    {
+      "canonical": "meme-coin-audit",
+      "domain": "blockchain-web3",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:meme-coin-audit"
+      ]
+    },
+    {
+      "canonical": "memory-forensics-volatility",
+      "domain": "forensics",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:memory-forensics-volatility"
+      ]
+    },
+    {
+      "canonical": "mobile-auth-bypass",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-auth-bypass"
+      ]
+    },
+    {
+      "canonical": "mobile-code-quality",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-code-quality"
+      ]
+    },
+    {
+      "canonical": "mobile-insecure-storage",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-insecure-storage"
+      ]
+    },
+    {
+      "canonical": "mobile-network-security",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-network-security"
+      ]
+    },
+    {
+      "canonical": "mobile-pentest",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:mobile-pentest"
+      ]
+    },
+    {
+      "canonical": "mobile-platform-interaction",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-platform-interaction"
+      ]
+    },
+    {
+      "canonical": "mobile-resilience",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-resilience"
+      ]
+    },
+    {
+      "canonical": "mobile-ssl-pinning-bypass",
+      "domain": "mobile",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:mobile-ssl-pinning-bypass"
+      ]
+    },
+    {
+      "canonical": "mobile-weak-crypto",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:mobile-weak-crypto"
+      ]
+    },
+    {
+      "canonical": "network-protocol-attacks",
+      "domain": "network-pivoting",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:network-protocol-attacks"
+      ]
+    },
+    {
+      "canonical": "nosql-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:nosql-injection"
+      ]
+    },
+    {
+      "canonical": "ntlm-relay-coercion",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:ntlm-relay-coercion"
+      ]
+    },
+    {
+      "canonical": "oauth-oidc-misconfiguration",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:oauth-oidc-misconfiguration"
+      ]
+    },
+    {
+      "canonical": "observe-skill",
+      "domain": "meta-selfimprove",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:observe-skill"
+      ]
+    },
+    {
+      "canonical": "open-redirect",
+      "domain": "client-side",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:open-redirect",
+        "hacking-skills:open-redirect"
+      ]
+    },
+    {
+      "canonical": "password-reset-flaws",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:password-reset-flaws"
+      ]
+    },
+    {
+      "canonical": "path-traversal",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:path-traversal-lfi"
+      ]
+    },
+    {
+      "canonical": "ponytail",
+      "domain": "code-review-quality",
+      "source_count": 2,
+      "sources": [
+        "ponytail:ponytail",
+        "ponytail:ponytail"
+      ]
+    },
+    {
+      "canonical": "ponytail-audit",
+      "domain": "code-review-quality",
+      "source_count": 2,
+      "sources": [
+        "ponytail:ponytail-audit",
+        "ponytail:ponytail-audit"
+      ]
+    },
+    {
+      "canonical": "ponytail-debt",
+      "domain": "code-review-quality",
+      "source_count": 2,
+      "sources": [
+        "ponytail:ponytail-debt",
+        "ponytail:ponytail-debt"
+      ]
+    },
+    {
+      "canonical": "ponytail-gain",
+      "domain": "code-review-quality",
+      "source_count": 2,
+      "sources": [
+        "ponytail:ponytail-gain",
+        "ponytail:ponytail-gain"
+      ]
+    },
+    {
+      "canonical": "ponytail-help",
+      "domain": "code-review-quality",
+      "source_count": 2,
+      "sources": [
+        "ponytail:ponytail-help",
+        "ponytail:ponytail-help"
+      ]
+    },
+    {
+      "canonical": "ponytail-review",
+      "domain": "code-review-quality",
+      "source_count": 2,
+      "sources": [
+        "ponytail:ponytail-review",
+        "ponytail:ponytail-review"
+      ]
+    },
+    {
+      "canonical": "prototype-pollution",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:prototype-pollution-advanced",
+        "hack-skills:prototype-pollution"
+      ]
+    },
+    {
+      "canonical": "pwn-request",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:pwn-request"
+      ]
+    },
+    {
+      "canonical": "race-condition",
+      "domain": "business-logic",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:race-condition"
+      ]
+    },
+    {
+      "canonical": "recon-methodology",
+      "domain": "recon",
+      "source_count": 3,
+      "sources": [
+        "Agentic-Bug-Hunter:web2-recon",
+        "hack-skills:recon-and-methodology",
+        "hack-skills:recon-for-sec"
+      ]
+    },
+    {
+      "canonical": "report-writing",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:report-writing"
+      ]
+    },
+    {
+      "canonical": "request-smuggling",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:request-smuggling",
+        "hacking-skills:http-request-smuggling"
+      ]
+    },
+    {
+      "canonical": "rsa-attack-techniques",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:rsa-attack-techniques"
+      ]
+    },
+    {
+      "canonical": "saml-sso-assertion-attacks",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:saml-sso-assertion-attacks"
+      ]
+    },
+    {
+      "canonical": "sandbox-escape-techniques",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:sandbox-escape-techniques"
+      ]
+    },
+    {
+      "canonical": "security-arsenal",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:security-arsenal"
+      ]
+    },
+    {
+      "canonical": "self-hosted-runner-poisoning",
+      "domain": "cicd-supplychain",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:self-hosted-runner-poisoning"
+      ]
+    },
+    {
+      "canonical": "session-fixation",
+      "domain": "auth-authz",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:session-fixation"
+      ]
+    },
+    {
+      "canonical": "skill-inspector",
+      "domain": "safety-scanning",
+      "source_count": 1,
+      "sources": [
+        "skillspector:skill-inspector"
+      ]
+    },
+    {
+      "canonical": "smart-contract-vulnerabilities",
+      "domain": "blockchain-web3",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:smart-contract-vulnerabilities"
+      ]
+    },
+    {
+      "canonical": "sql-injection",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:sqli-sql-injection",
+        "hacking-skills:sql-injection"
+      ]
+    },
+    {
+      "canonical": "ssrf",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:ssrf-server-side-request-forgery",
+        "hacking-skills:ssrf"
+      ]
+    },
+    {
+      "canonical": "ssti",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:ssti-server-side-template-injection",
+        "hacking-skills:ssti"
+      ]
+    },
+    {
+      "canonical": "stack-overflow-and-rop",
+      "domain": "binary-pwn",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:stack-overflow-and-rop"
+      ]
+    },
+    {
+      "canonical": "steganography-techniques",
+      "domain": "forensics",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:steganography-techniques"
+      ]
+    },
+    {
+      "canonical": "subdomain-takeover",
+      "domain": "recon",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:subdomain-takeover"
+      ]
+    },
+    {
+      "canonical": "symbolic-execution-tools",
+      "domain": "reverse-engineering",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:symbolic-execution-tools"
+      ]
+    },
+    {
+      "canonical": "symmetric-cipher-attacks",
+      "domain": "crypto",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:symmetric-cipher-attacks"
+      ]
+    },
+    {
+      "canonical": "traffic-analysis-pcap",
+      "domain": "forensics",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:traffic-analysis-pcap"
+      ]
+    },
+    {
+      "canonical": "triage-validation",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:triage-validation"
+      ]
+    },
+    {
+      "canonical": "tunneling-and-pivoting",
+      "domain": "network-pivoting",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:tunneling-and-pivoting"
+      ]
+    },
+    {
+      "canonical": "type-juggling",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:type-juggling"
+      ]
+    },
+    {
+      "canonical": "vm-and-bytecode-reverse",
+      "domain": "reverse-engineering",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:vm-and-bytecode-reverse"
+      ]
+    },
+    {
+      "canonical": "waf-bypass-techniques",
+      "domain": "waf-bypass",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:waf-bypass-techniques"
+      ]
+    },
+    {
+      "canonical": "web-cache-deception",
+      "domain": "client-side",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:web-cache-deception"
+      ]
+    },
+    {
+      "canonical": "web-fingerprinting",
+      "domain": "recon",
+      "source_count": 1,
+      "sources": [
+        "hacking-skills:web-fingerprinting"
+      ]
+    },
+    {
+      "canonical": "web2-vuln-classes",
+      "domain": "methodology-core",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:web2-vuln-classes"
+      ]
+    },
+    {
+      "canonical": "web3-audit",
+      "domain": "blockchain-web3",
+      "source_count": 1,
+      "sources": [
+        "Agentic-Bug-Hunter:web3-audit"
+      ]
+    },
+    {
+      "canonical": "websocket-security",
+      "domain": "network-pivoting",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:websocket-security"
+      ]
+    },
+    {
+      "canonical": "windows-av-evasion",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:windows-av-evasion"
+      ]
+    },
+    {
+      "canonical": "windows-lateral-movement",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:windows-lateral-movement"
+      ]
+    },
+    {
+      "canonical": "windows-privilege-escalation",
+      "domain": "windows-ad",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:windows-privilege-escalation"
+      ]
+    },
+    {
+      "canonical": "xslt-injection",
+      "domain": "web-injection",
+      "source_count": 1,
+      "sources": [
+        "hack-skills:xslt-injection"
+      ]
+    },
+    {
+      "canonical": "xss",
+      "domain": "web-injection",
+      "source_count": 4,
+      "sources": [
+        "hack-skills:xss-cross-site-scripting",
+        "hacking-skills:dom-xss",
+        "hacking-skills:xss-reflected",
+        "hacking-skills:xss-stored"
+      ]
+    },
+    {
+      "canonical": "xxe",
+      "domain": "web-injection",
+      "source_count": 2,
+      "sources": [
+        "hack-skills:xxe-xml-external-entity",
+        "hacking-skills:xxe"
+      ]
+    }
+  ]
+}

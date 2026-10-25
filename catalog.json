@@ -1566,5 +1566,52 @@
         "jaccard": 0.67
       }
     ]
+  },
+  "research_additions_2025": {
+    "description": "Hand-written, current-technique skills added after researching the state of the art in web/bug-bounty hacking (2023-2025). Chosen because they were NOT already covered by the 914-skill library and have high real-world impact.",
+    "method": "Cross-checked every candidate against existing skill names; only genuinely-missing, high-value techniques were written.",
+    "count": 8,
+    "skills": [
+      {
+        "name": "http-desync-single-packet-attack",
+        "domain": "server-side",
+        "why": "Modern request smuggling (CL.0/TE.0/H2.CL/H2.TE, client-side desync) + single-packet attack for jitter-free race conditions."
+      },
+      {
+        "name": "web-timing-attacks",
+        "domain": "server-side",
+        "why": "Kettle 2024 'Listen to the whispers': timing oracle for hidden params, blind injection, scoped SSRF, user enumeration."
+      },
+      {
+        "name": "php-filter-chains-rce",
+        "domain": "server-side",
+        "why": "Escalate file-read/LFI to RCE via php://filter iconv chains; blind error-oracle variant."
+      },
+      {
+        "name": "server-side-prototype-pollution",
+        "domain": "server-side",
+        "why": "SSPP detection (json-spaces/status oracle) + gadget chains to RCE/DoS/privesc in Node.js."
+      },
+      {
+        "name": "mfa-2fa-bypass",
+        "domain": "auth",
+        "why": "Systematic MFA/OTP bypass: flow-skip, status/response tamper, OTP brute + rate-limit bypass, backup-code & reset drop, race."
+      },
+      {
+        "name": "css-injection-exfiltration",
+        "domain": "client-side",
+        "why": "Steal CSRF tokens/secrets with CSS only (strict CSP / no-JS sanitizers) via attribute selectors + sequential @import."
+      },
+      {
+        "name": "doubleclickjacking",
+        "domain": "client-side",
+        "why": "Yibelo 2024/25: double-click timing defeats X-Frame-Options/frame-busting/SameSite to land clicks on OAuth consent, delete, transfer."
+      },
+      {
+        "name": "writing-nuclei-templates",
+        "domain": "tooling",
+        "why": "Turn any manual finding into a reusable Nuclei detector: matchers/DSL, raw multi-step, interactsh OOB, fuzzing, workflows."
+      }
+    ]
   }
 }

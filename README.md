@@ -92,3 +92,23 @@ Browse `skills/<topic>/SKILL.md` for a technique, or start from `MERGED_INDEX.md
 ## 📜 Licensing & attribution
 
 Skills added from `anthropic-cybersecurity-skills` keep their original **Apache-2.0** `LICENSE` file and frontmatter author. Offensive skills retain the provenance of their source repos. See [`ATTRIBUTION.md`](./ATTRIBUTION.md).
+
+---
+
+## 🔬 Research additions (2025) — cutting-edge techniques
+
+After integrating the two repos, the library was researched against the current state of the art in web/bug-bounty hacking (2023-2025). These **8** high-impact techniques were missing and were written as full playbooks:
+
+| Skill | Domain | Why it makes the repo stronger |
+|---|---|---|
+| `http-desync-single-packet-attack` | server-side | Modern request smuggling (CL.0/TE.0/H2.CL/H2.TE, client-side desync) + single-packet attack for jitter-free race conditions. |
+| `web-timing-attacks` | server-side | Kettle 2024 'Listen to the whispers': timing oracle for hidden params, blind injection, scoped SSRF, user enumeration. |
+| `php-filter-chains-rce` | server-side | Escalate file-read/LFI to RCE via php://filter iconv chains; blind error-oracle variant. |
+| `server-side-prototype-pollution` | server-side | SSPP detection (json-spaces/status oracle) + gadget chains to RCE/DoS/privesc in Node.js. |
+| `mfa-2fa-bypass` | auth | Systematic MFA/OTP bypass: flow-skip, status/response tamper, OTP brute + rate-limit bypass, backup-code & reset drop, race. |
+| `css-injection-exfiltration` | client-side | Steal CSRF tokens/secrets with CSS only (strict CSP / no-JS sanitizers) via attribute selectors + sequential @import. |
+| `doubleclickjacking` | client-side | Yibelo 2024/25: double-click timing defeats X-Frame-Options/frame-busting/SameSite to land clicks on OAuth consent, delete, transfer. |
+| `writing-nuclei-templates` | tooling | Turn any manual finding into a reusable Nuclei detector: matchers/DSL, raw multi-step, interactsh OOB, fuzzing, workflows. |
+
+Each was cross-checked against all 922 existing skills to avoid duplication. Total skills now: **922**.
+

@@ -63,3 +63,25 @@ The 25 fused topics include: `xss`, `sql-injection`, `command-injection`, `ssrf`
 ## 🚀 Usage
 
 Browse `skills/<topic>/SKILL.md` for a technique, or start from `MERGED_INDEX.md`. The skills are plain Markdown and work as a reference library or as context for AI security agents.
+
+
+---
+
+## Expanded with Anthropic Cybersecurity Skills (2026-10)
+
+This library now also integrates [mukul975/anthropic-cybersecurity-skills](https://github.com/mukul975/anthropic-cybersecurity-skills) (Apache-2.0, 818 skills), turning the repo from a purely offensive set into a full-spectrum offensive **and** defensive knowledge base.
+
+| | Count |
+|---|---|
+| Original offensive canonical skills | 142 |
+| Skills added from anthropic-cybersecurity-skills | 751 |
+| Duplicate topics skipped (already covered) | 67 |
+| **Total skills now** | **914** |
+
+**New domains it adds:** digital forensics & DFIR, malware analysis & reverse engineering, incident response, threat intelligence & hunting, detection engineering (SIEM/Splunk/KQL/Sigma/YARA), cloud security (AWS/Azure/GCP), Kubernetes & container defense, OT/ICS security, app-security hardening, and compliance (NIST CSF, CMMC, MITRE ATT&CK).
+
+**Duplicates:** 67 anthropic skills covering a topic you already had (e.g. `testing-cors-misconfiguration` -> `cors-misconfiguration`, `testing-for-xss-vulnerabilities` -> `xss`) were skipped to keep the library de-duplicated. Full list in `INTEGRATION_ANTHROPIC.md`.
+
+**Also copied:** framework `mappings/`, `ATTACK_COVERAGE.md`, and the upstream `anthropic-index.json`.
+
+**Attribution:** every added skill keeps its original Apache-2.0 `LICENSE` and frontmatter author. See `ATTRIBUTION.md`.

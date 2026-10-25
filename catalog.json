@@ -1221,5 +1221,350 @@
         "hacking-skills:xxe"
       ]
     }
-  ]
+  ],
+  "anthropic_integration": {
+    "source": "https://github.com/mukul975/anthropic-cybersecurity-skills",
+    "license": "Apache-2.0",
+    "anthropic_total": 818,
+    "added": 751,
+    "skipped_duplicates": 67,
+    "skills_total_after": 914,
+    "duplicate_map": [
+      {
+        "anthropic": "analyzing-active-directory-acl-abuse",
+        "existing": "active-directory-acl-abuse",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "analyzing-ethereum-smart-contract-vulnerabilities",
+        "existing": "smart-contract-vulnerabilities",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "analyzing-heap-spray-exploitation",
+        "existing": "heap-exploitation",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "analyzing-memory-dumps-with-volatility",
+        "existing": "memory-forensics-volatility",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "analyzing-memory-forensics-with-lime-and-volatility",
+        "existing": "memory-forensics-volatility",
+        "jaccard": 0.75
+      },
+      {
+        "anthropic": "conducting-memory-forensics-with-volatility",
+        "existing": "memory-forensics-volatility",
+        "jaccard": 0.75
+      },
+      {
+        "anthropic": "detecting-azure-lateral-movement",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-container-escape-attempts",
+        "existing": "container-escape-techniques",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "detecting-container-escape-with-falco-rules",
+        "existing": "container-escape-techniques",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-credential-dumping-techniques",
+        "existing": "credential-attack",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-dcsync-attack-in-active-directory",
+        "existing": "active-directory-kerberos-attacks",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-dependency-confusion",
+        "existing": "dependency-confusion",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "detecting-indirect-prompt-injection",
+        "existing": "llm-prompt-injection",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-lateral-movement-in-network",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-lateral-movement-with-splunk",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-lateral-movement-with-zeek",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-modbus-command-injection-attacks",
+        "existing": "command-injection",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "detecting-pass-the-hash-attacks",
+        "existing": "hash-attack-techniques",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-privilege-escalation-attempts",
+        "existing": "linux-privilege-escalation",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "detecting-process-injection-techniques",
+        "existing": "macos-process-injection",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "detecting-sql-injection-via-waf-logs",
+        "existing": "sql-injection",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "exploiting-active-directory-certificate-services-esc1",
+        "existing": "active-directory-certificate-services",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "exploiting-http-request-smuggling",
+        "existing": "request-smuggling",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "exploiting-insecure-data-storage-in-mobile",
+        "existing": "mobile-insecure-storage",
+        "jaccard": 0.6
+      },
+      {
+        "anthropic": "exploiting-insecure-deserialization",
+        "existing": "deserialization-insecure",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "exploiting-nosql-injection-vulnerabilities",
+        "existing": "nosql-injection",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "exploiting-oauth-misconfiguration",
+        "existing": "oauth-oidc-misconfiguration",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "exploiting-prototype-pollution-in-javascript",
+        "existing": "prototype-pollution",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "exploiting-race-condition-vulnerabilities",
+        "existing": "race-condition",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "exploiting-sql-injection-vulnerabilities",
+        "existing": "sql-injection",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "exploiting-sql-injection-with-sqlmap",
+        "existing": "sql-injection",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "exploiting-type-juggling-vulnerabilities",
+        "existing": "type-juggling",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "hunting-credential-stuffing-attacks",
+        "existing": "credential-attack",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "hunting-for-dcom-lateral-movement",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "hunting-for-lateral-movement-via-wmi",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "hunting-for-ntlm-relay-attacks",
+        "existing": "ntlm-relay-coercion",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "hunting-for-process-injection-techniques",
+        "existing": "macos-process-injection",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "implementing-saml-sso-with-okta",
+        "existing": "saml-sso-assertion-attacks",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-active-directory-bloodhound-analysis",
+        "existing": "active-directory-kerberos-attacks",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-active-directory-penetration-test",
+        "existing": "active-directory-kerberos-attacks",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-active-directory-vulnerability-assessment",
+        "existing": "active-directory-kerberos-attacks",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-clickjacking-attack-test",
+        "existing": "clickjacking",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "performing-container-escape-detection",
+        "existing": "container-escape-techniques",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "performing-csrf-attack-simulation",
+        "existing": "csrf",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-graphql-security-assessment",
+        "existing": "graphql-security",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "performing-http-parameter-pollution-attack",
+        "existing": "http-parameter-pollution",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "performing-lateral-movement-detection",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "performing-lateral-movement-with-wmiexec",
+        "existing": "linux-lateral-movement",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-memory-forensics-with-volatility3",
+        "existing": "memory-forensics-volatility",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-mobile-app-certificate-pinning-bypass",
+        "existing": "mobile-ssl-pinning-bypass",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-privilege-escalation-assessment",
+        "existing": "linux-privilege-escalation",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-privilege-escalation-on-linux",
+        "existing": "linux-privilege-escalation",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "performing-second-order-sql-injection",
+        "existing": "sql-injection",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-ssrf-vulnerability-exploitation",
+        "existing": "ssrf",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "performing-steganography-detection",
+        "existing": "steganography-techniques",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "performing-web-cache-deception-attack",
+        "existing": "web-cache-deception",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "performing-web-cache-poisoning-attack",
+        "existing": "web-cache-deception",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "testing-api-for-mass-assignment-vulnerability",
+        "existing": "mass-assignment",
+        "jaccard": 0.67
+      },
+      {
+        "anthropic": "testing-cors-misconfiguration",
+        "existing": "cors-misconfiguration",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "testing-for-business-logic-vulnerabilities",
+        "existing": "business-logic",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "testing-for-email-header-injection",
+        "existing": "email-header-injection",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "testing-for-host-header-injection",
+        "existing": "email-header-injection",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "testing-for-open-redirect-vulnerabilities",
+        "existing": "open-redirect",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "testing-for-xss-vulnerabilities",
+        "existing": "xss",
+        "jaccard": 1.0
+      },
+      {
+        "anthropic": "testing-for-xss-vulnerabilities-with-burpsuite",
+        "existing": "xss",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "testing-for-xxe-injection-vulnerabilities",
+        "existing": "xxe",
+        "jaccard": 0.5
+      },
+      {
+        "anthropic": "testing-websocket-api-security",
+        "existing": "websocket-security",
+        "jaccard": 0.67
+      }
+    ]
+  }
 }

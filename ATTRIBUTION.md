@@ -21,3 +21,12 @@ If you are an upstream author and want attribution adjusted or your content remo
 ## Disclaimer
 
 Provided for educational use and **authorized** security testing only. The maintainers of this aggregation are not responsible for misuse.
+
+
+## Added source (2026-10 integration)
+
+| Repository | Author / Org | URL | License |
+|---|---|---|---|
+| anthropic-cybersecurity-skills | mukul975 / mahipal | https://github.com/mukul975/anthropic-cybersecurity-skills | Apache-2.0 |
+
+751 skills from this repo were integrated; 67 duplicate topics already present were skipped (see `INTEGRATION_ANTHROPIC.md`). Each added skill keeps its original Apache-2.0 `LICENSE` file and frontmatter attribution. The `mappings/` directory and `ATTACK_COVERAGE.md` also come from this source.

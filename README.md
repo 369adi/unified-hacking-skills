@@ -1,8 +1,8 @@
 # 🛡️ Unified Hacking Skills — Fused Knowledge Base
 
-A single, de-duplicated, offensive-security **skill library** fused from **five** of the best public hacking-skill repositories. Overlapping and near-duplicate skills have been **merged into one canonical skill each** (all techniques from every source preserved), so the package is clean instead of confusing.
+A single, de-duplicated **cybersecurity skill library** that fuses the best public offensive-security repos with a broad defensive/blue-team corpus. It now covers the **full spectrum** — offense **and** defense — in **914 skills**, each a self-contained Markdown playbook (`skills/<topic>/SKILL.md`).
 
-> **Scope & ethics.** This is an organized reference/knowledge base for **learning, authorized penetration testing, bug bounty, and defense**. Use it only against systems you own or are explicitly authorized to test. You are responsible for staying within the law and the rules of engagement.
+> **Scope & ethics.** This is an organized reference/knowledge base for **learning, authorized penetration testing, bug bounty, detection engineering, and defense**. Use it only against systems you own or are explicitly authorized to test. You are responsible for staying within the law and the rules of engagement.
 
 ---
 
@@ -10,78 +10,85 @@ A single, de-duplicated, offensive-security **skill library** fused from **five*
 
 | | Count |
 |---|---|
-| Canonical skills (after fusion) | **142** |
-| Raw skill entries ingested | 179 |
-| Multi-source skills truly fused into one | **25** |
+| **Total skills** | **914** |
+| Offensive canonical skills (fused from 5 repos) | 142 |
+| Defensive / broad-spectrum skills (anthropic repo) | 751 |
+| Duplicate topics skipped (already covered) | 67 |
+| Raw offensive entries ingested | 179 |
+| Multi-source offensive skills truly fused into one | 25 |
 | Role agents | 3 |
 | Tool / script files | 84 |
-| Source repositories | 5 |
+| Source repositories | 6 |
 
-Empty/phantom files found in upstream repos were dropped; everything usable was kept.
+Empty/phantom files from upstream repos were dropped; everything usable was kept.
+
+---
+
+## 🧭 Coverage: offense **and** defense
+
+**Offensive (your original 142):** web app exploitation (XSS, SQLi, SSRF, SSTI, XXE, CSRF, IDOR/BOLA, request smuggling, prototype pollution), auth/JWT attacks, API & GraphQL testing, Active Directory / Kerberos, mobile, binary/pwn, cloud pentest, recon & bug-bounty methodology.
+
+**Newly added (751 from anthropic-cybersecurity-skills):**
+- Digital forensics & **DFIR**, memory forensics, incident response
+- **Malware analysis** & reverse engineering
+- **Threat intelligence & hunting**, detection engineering (SIEM/Splunk/KQL/**Sigma**/**YARA**)
+- **Cloud security** (AWS/Azure/GCP), Kubernetes & container defense
+- **OT/ICS** security
+- App-security hardening & secure configuration
+- **Compliance & frameworks**: NIST CSF, CMMC, MITRE ATT&CK
 
 ---
 
 ## 🧬 Source repositories (provenance & credit)
 
-All upstream projects are public. Full credit goes to their original authors.
+All upstream projects are public. Full credit goes to their original authors. See [`ATTRIBUTION.md`](./ATTRIBUTION.md) for details and licensing notes.
 
-| Source | Highlights |
-|---|---|
-| [yaklang/hack-skills](https://github.com/yaklang/hack-skills) | 103 skills, progressive-disclosure structure, 14 domains |
-| [securityfortech/hacking-skills](https://github.com/securityfortech/hacking-skills) | 43 skills on OWASP WSTG/MASTG, meta distill/observe/amend loop, SKILLS_GRAPH, 3 role agents |
-| [awarexone/Agentic-Bug-Hunter](https://github.com/awarexone/Agentic-Bug-Hunter) | 7-Question Gate methodology, Burp/HackerOne MCP integration, tool arsenal |
-| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Packaging/command workflows for ~20 platforms |
-| [nvidia/skillspector](https://github.com/nvidia/skillspector) | `skill-inspector` scanner — 71 patterns across 17 categories (safety layer) |
-
-See [`ATTRIBUTION.md`](./ATTRIBUTION.md) for details and licensing notes.
+| Source | Highlights | License |
+|---|---|---|
+| [yaklang/hack-skills](https://github.com/yaklang/hack-skills) | 103 skills, progressive-disclosure structure, 14 domains | upstream |
+| [securityfortech/hacking-skills](https://github.com/securityfortech/hacking-skills) | 43 skills on OWASP WSTG/MASTG, distill/observe/amend loop, 3 role agents | upstream |
+| [awarexone/Agentic-Bug-Hunter](https://github.com/awarexone/Agentic-Bug-Hunter) | 7-Question Gate methodology, Burp/HackerOne MCP integration, tool arsenal | upstream |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Packaging/command workflows for ~20 platforms | upstream |
+| [nvidia/skillspector](https://github.com/nvidia/skillspector) | `skill-inspector` scanner — 71 patterns across 17 categories (safety layer) | upstream |
+| [mukul975/anthropic-cybersecurity-skills](https://github.com/mukul975/anthropic-cybersecurity-skills) | 818 defensive/broad-spectrum skills: DFIR, malware, detection, cloud, OT/ICS, compliance | Apache-2.0 |
 
 ---
 
 ## 📁 Structure
 
 ```
-skills/     142 canonical skills, one folder each (SKILL.md + any helper files)
-              fused skills keep every source verbatim under _sources/
+skills/     914 skills, one folder each (SKILL.md + any helper files)
+              - offensive skills use short topic names (e.g. xss, ssrf, jwt-attacks)
+              - fused offensive skills keep every source verbatim under _sources/
+              - added skills keep their descriptive names + original Apache-2.0 LICENSE
 agents/     3 role agents (cicd-auditor, webapp-pentester, mobile-pentester)
 tools/      84 tool/script files (the Agentic-Bug-Hunter arsenal)
-catalog.json      machine-readable catalog + merge map
-MERGED_INDEX.md   human-readable index grouped by domain, with fusion map
+mappings/   MITRE ATT&CK / NIST CSF / OWASP framework mappings (from anthropic repo)
+catalog.json            machine-readable catalog + merge map + integration record
+MERGED_INDEX.md         human-readable index of the offensive skills, grouped by domain
+ATTACK_COVERAGE.md      MITRE ATT&CK coverage summary (from anthropic repo)
+INTEGRATION_ANTHROPIC.md / .json   what was added, and the 67 duplicate topics skipped
+anthropic-index.json    upstream index of the anthropic repo, for reference
 ```
 
-Each **fused** `SKILL.md` starts with a short banner naming the merged sources, followed by one section per source (`## Quelle: <repo> — <id>`), richest source first — nothing from any source is lost.
+Each **fused** offensive `SKILL.md` starts with a short banner naming the merged sources, followed by one section per source (`## Quelle: <repo> — <id>`), richest source first — nothing from any source is lost.
 
 ---
 
-## 🔀 How fusion works
+## 🔀 How de-duplication works
 
-Skills covering the same topic under different names (e.g. `cmd-injection` vs `cmdi-command-injection`, four separate XSS skills, three `business-logic` variants, three JWT skills) were mapped to one canonical skill and combined. The full mapping is in [`MERGED_INDEX.md`](./MERGED_INDEX.md) and `catalog.json`.
+**Within the 5 offensive repos:** skills covering the same topic under different names (e.g. `cmd-injection` vs `cmdi-command-injection`, four separate XSS skills, three JWT skills) were mapped to one canonical skill and combined. The 25 fused topics include `xss`, `sql-injection`, `command-injection`, `ssrf`, `ssti`, `xxe`, `csrf`, `idor-bola`, `jwt-attacks`, `graphql-security`, `request-smuggling`, `cors-misconfiguration`, `prototype-pollution`, `authentication-bypass`, `business-logic`, and more. Full map in [`MERGED_INDEX.md`](./MERGED_INDEX.md) and `catalog.json`.
 
-The 25 fused topics include: `xss`, `sql-injection`, `command-injection`, `ssrf`, `ssti`, `xxe`, `csrf`, `idor-bola`, `jwt-attacks`, `graphql-security`, `request-smuggling`, `cors-misconfiguration`, `prototype-pollution`, `authentication-bypass`, `business-logic`, `recon-methodology`, `bug-bounty-methodology`, and more.
+**Against the anthropic repo:** each of its 818 skills was matched to your existing topics by a normalized token comparison. **67** that covered a topic you already had (e.g. `testing-cors-misconfiguration` → `cors-misconfiguration`, `testing-for-xss-vulnerabilities` → `xss`, `analyzing-active-directory-acl-abuse` → `active-directory-acl-abuse`) were **skipped**; the other **751** were added. The complete skipped list is in [`INTEGRATION_ANTHROPIC.md`](./INTEGRATION_ANTHROPIC.md).
 
 ---
 
 ## 🚀 Usage
 
-Browse `skills/<topic>/SKILL.md` for a technique, or start from `MERGED_INDEX.md`. The skills are plain Markdown and work as a reference library or as context for AI security agents.
-
+Browse `skills/<topic>/SKILL.md` for a technique, or start from `MERGED_INDEX.md` (offensive) and `ATTACK_COVERAGE.md` / `mappings/` (framework-aligned defensive coverage). The skills are plain Markdown and work as a reference library or as context for AI security agents.
 
 ---
 
-## Expanded with Anthropic Cybersecurity Skills (2026-10)
+## 📜 Licensing & attribution
 
-This library now also integrates [mukul975/anthropic-cybersecurity-skills](https://github.com/mukul975/anthropic-cybersecurity-skills) (Apache-2.0, 818 skills), turning the repo from a purely offensive set into a full-spectrum offensive **and** defensive knowledge base.
-
-| | Count |
-|---|---|
-| Original offensive canonical skills | 142 |
-| Skills added from anthropic-cybersecurity-skills | 751 |
-| Duplicate topics skipped (already covered) | 67 |
-| **Total skills now** | **914** |
-
-**New domains it adds:** digital forensics & DFIR, malware analysis & reverse engineering, incident response, threat intelligence & hunting, detection engineering (SIEM/Splunk/KQL/Sigma/YARA), cloud security (AWS/Azure/GCP), Kubernetes & container defense, OT/ICS security, app-security hardening, and compliance (NIST CSF, CMMC, MITRE ATT&CK).
-
-**Duplicates:** 67 anthropic skills covering a topic you already had (e.g. `testing-cors-misconfiguration` -> `cors-misconfiguration`, `testing-for-xss-vulnerabilities` -> `xss`) were skipped to keep the library de-duplicated. Full list in `INTEGRATION_ANTHROPIC.md`.
-
-**Also copied:** framework `mappings/`, `ATTACK_COVERAGE.md`, and the upstream `anthropic-index.json`.
-
-**Attribution:** every added skill keeps its original Apache-2.0 `LICENSE` and frontmatter author. See `ATTRIBUTION.md`.
+Skills added from `anthropic-cybersecurity-skills` keep their original **Apache-2.0** `LICENSE` file and frontmatter author. Offensive skills retain the provenance of their source repos. See [`ATTRIBUTION.md`](./ATTRIBUTION.md).

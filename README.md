@@ -1,6 +1,6 @@
-# 🛡️ Unified Hacking Skills — Fused Knowledge Base
+﻿# 🛡️ Unified Hacking Skills — Fused Knowledge Base
 
-A single, de-duplicated **cybersecurity skill library** that fuses the best public offensive-security repos with a broad defensive/blue-team corpus. It now covers the **full spectrum** — offense **and** defense — in **914 skills**, each a self-contained Markdown playbook (`skills/<topic>/SKILL.md`).
+A single, de-duplicated **cybersecurity skill library** that fuses the best public offensive-security repos with a broad defensive/blue-team corpus. It now covers the **full spectrum** — offense **and** defense — in **922 skills**, each a self-contained Markdown playbook (`skills/<topic>/SKILL.md`).
 
 > **Scope & ethics.** This is an organized reference/knowledge base for **learning, authorized penetration testing, bug bounty, detection engineering, and defense**. Use it only against systems you own or are explicitly authorized to test. You are responsible for staying within the law and the rules of engagement.
 
@@ -10,7 +10,7 @@ A single, de-duplicated **cybersecurity skill library** that fuses the best publ
 
 | | Count |
 |---|---|
-| **Total skills** | **914** |
+| **Total skills** | **922** |
 | Offensive canonical skills (fused from 5 repos) | 142 |
 | Defensive / broad-spectrum skills (anthropic repo) | 751 |
 | Duplicate topics skipped (already covered) | 67 |
@@ -57,7 +57,7 @@ All upstream projects are public. Full credit goes to their original authors. Se
 ## 📁 Structure
 
 ```
-skills/     914 skills, one folder each (SKILL.md + any helper files)
+skills/     922 skills, one folder each (SKILL.md + any helper files)
               - offensive skills use short topic names (e.g. xss, ssrf, jwt-attacks)
               - fused offensive skills keep every source verbatim under _sources/
               - added skills keep their descriptive names + original Apache-2.0 LICENSE
